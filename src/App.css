@@ -50,10 +50,6 @@
 	transform: rotateY(-180deg);
 }
 
-.new-card{
-  transition: none;
-}
-
 .nav-link{
   cursor: pointer;
 }
@@ -91,23 +87,19 @@
   width: 500px;
   top: 20%;
   left: 50%;
-  margin-top: -100px;
-  margin-left: -250px;
-}
-
-.multi-container {
-  display: flex;          
-  justify-content: center;
+  margin-top: -100px; /* Negative half of height. */
+  margin-left: -250px; /* Negative half of width. */  
 }
 
 ul.multi{
   display: block;
   list-style-type: none;
-  width: 70%;
+  width: 100%;
 }
 
 ul.multi li{
-  display: block;
+  display: inline;
+  padding: 0 5px;
   font-size: 16px;
-  text-align: left;
 }
+
