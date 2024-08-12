@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import './App.css'
 import { QuestionMultiData } from './components/MultiCard';
 import { QuestionRegularData} from './components/RegularCard';
@@ -15,9 +15,16 @@ const App: React.FC = () => {
   const [flipClass, setFlipClass] = useState<string>('');
   
   const userChoice = useCallback((selectedCardStyle: string) => {
-    setCardStyle(selectedCardStyle);
-    setReady(false);
+    if (selectedCardStyle !== cardStyle) {
+      console.log(`User selected: ${selectedCardStyle}`);
+      setCardStyle(selectedCardStyle);
+      setReady(false);
+    }
   }, []);
+
+  useEffect(() => {
+    console.log(`cardStyle changed to: ${cardStyle}`);
+  }, [cardStyle]);
 
   const nowReady = useCallback((fetchedData: QuestionRegularData | QuestionWeightData | QuestionMultiData | null) => {
     const flip = flipClass === 'flip' ? 'new-card' : flipClass;

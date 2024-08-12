@@ -12,6 +12,7 @@ interface QuizTypeProps {
 }
 
 const QuizType: React.FC<QuizTypeProps> = (props) => {
+console.log(`Rendering QuizType: ${props.quizType}`);
   return (
     <li className="col-sm-3 text-center">
       <div className="nav-card" onClick={() => props.userChoice(props.quizType)}>
@@ -22,4 +23,4 @@ const QuizType: React.FC<QuizTypeProps> = (props) => {
   );
 }
 
-export default QuizType;
+export default React.memo(QuizType);

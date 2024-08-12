@@ -29,7 +29,6 @@ class FlashCard extends Component<FlashCardProps> {
   };
 
   newCard = () => {
-    //console.log(`Create new card ${this.props.cardStyle}`);
     let path = '';
     const cardStyle = this.props.cardStyle;
     switch (cardStyle) {
@@ -63,7 +62,7 @@ class FlashCard extends Component<FlashCardProps> {
         </div>
       );
     }
-    
+
     const cardStyle = this.props.cardStyle;
     let card;
     if (this.props.data != null) {
